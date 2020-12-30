@@ -21,17 +21,17 @@
  */
 #include "../../../../inc/MarlinConfigPre.h"
 
-#if BOTH(TFT_LVGL_UI, ADVANCED_PAUSE_FEATURE)
+#if BOTH(HAS_TFT_LVGL_UI, ADVANCED_PAUSE_FEATURE)
 
 #include "draw_ui.h"
-#include "lv_conf.h"
+#include <lv_conf.h>
 //#include "../lvgl/src/lv_objx/lv_imgbtn.h"
 //#include "../lvgl/src/lv_objx/lv_img.h"
 //#include "../lvgl/src/lv_core/lv_disp.h"
 //#include "../lvgl/src/lv_core/lv_refr.h"
 
-#include "../../../../MarlinCore.h"
 #include "../../../../feature/pause.h"
+#include "../../../../inc/MarlinConfig.h"
 
 void lv_draw_pause_message(const PauseMessage msg) {
   switch (msg) {
@@ -52,4 +52,4 @@ void lv_draw_pause_message(const PauseMessage msg) {
   }
 }
 
-#endif // TFT_LVGL_UI && ADVANCED_PAUSE_FEATURE
+#endif // HAS_TFT_LVGL_UI && ADVANCED_PAUSE_FEATURE
